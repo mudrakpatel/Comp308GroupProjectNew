@@ -8,14 +8,15 @@ var app = express();
 app.set("views", path.join(__dirname, "Templates"));
 app.set("view engine", "ejs");
 
-app.use(require("./Routes/index"));
-
-app.use(cors());
-
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 }));
+
+app.use(require("./Routes/index"));
+
+app.use(cors());
+
 
 app.use(express.static(path.join(__dirname, "Client")));
 app.use(express.static(path.join(__dirname, "Public")));

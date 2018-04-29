@@ -2,29 +2,29 @@ var mongoose = require("mongoose");
 
 var UserSchema = mongoose.Schema({
   FirstName: {
+    type: String
+  },LastName: {
+    type: String
+  },UserType: {
     type: String,
-    required: true
-  },LarstName: {
-    type: String,
-    required: true
+    enum: ["Patient", "Nurse"],
+    msg: ">>> User type can only be Nurse or Patient"
   },Email: {
-    type: String,
-    required: true
+    type: String
   },Password: {
-    type: String,
-    required: true
+    type: String
   },BodyTemperature: {
     type: Number,
-    required: false
+    default: 37
   },HeartRate: {
     type: Number,
-    required: false
+    default: 72
   },BloodPressure: {
     type: Number,
-    required: false
+    default: 120
   },RespiratoryRate: {
     type: Number,
-    required: false
+    default: 12
   }
 });
 
