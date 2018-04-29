@@ -17,7 +17,6 @@ app.use(require("./Routes/index"));
 
 app.use(cors());
 
-
 app.use(express.static(path.join(__dirname, "Client")));
 app.use(express.static(path.join(__dirname, "Public")));
 
