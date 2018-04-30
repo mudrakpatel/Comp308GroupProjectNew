@@ -22,7 +22,7 @@ router.get("/findAll", function(request, response, next){
   });
 });
 
-router.post("/", function(request, response, next){
+router.post("/addUser", function(request, response, next){
   var userToAdd = new User(request.body);
   userToAdd.save(function (error, newUser) {
     if (error) {
@@ -30,6 +30,7 @@ router.post("/", function(request, response, next){
     }else{
       console.log(newUser);
       //response.render("home.ejs");
+      response.status(200).send(newUser);
       }
   });//save
 });

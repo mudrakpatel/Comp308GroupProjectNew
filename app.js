@@ -14,6 +14,8 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 }));
 
 app.use(require("./Routes/index"));
+app.use(require("./Routes/home"));
+app.use(require("./Routes/edit"));
 
 app.use(cors());
 
